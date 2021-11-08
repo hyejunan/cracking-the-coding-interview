@@ -14,4 +14,17 @@ We generally assume a good implementation that keeps collisions to a minimum, in
 
 # ArrayList & Resizable Arrays
 
+In some languages, arrays(often called lists in this case) are automatically resizable. The array or list will grow as you append items. In other languages, like Java, the array's size can't change after its creation. </br></br>
+An ArrayList is an array that resizes itself as needed while still providing O(1) access. A typical implementation is that when the array is full, the array doubles in size. Each resizing takes O(n) time, but happens so rarely that its amortized insertion time is still O(1)
+```Java
+ArrayList<String> merge(String[] words, String[] more) {
+  ArrayList<String> sentence = new ArrayList<String>();
+  for (String w : words) sentence.add(w);
+  for (String w : more) sentence.add(w);
+  return sentence;
+}
+```
+<i> Why is the amortized insertion runtime O(1)? </i>
+N/2 + N/4 + N/8 + ... + 2 + 1
+
 # StringBuilder
